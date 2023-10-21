@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
 ?>
-<script>
+<!-- <script>
     let currentSlide = 0;
     const slides = document.getElementsByClassName("carousel-slide");
 
@@ -36,9 +36,9 @@ $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
         }
         slides[currentSlide].style.display = "block";
     }
-</script>
-<div class="carousel-container">
-    <!-- Image slides -->
+</script> -->
+<!-- <div class="carousel-container">
+    
     <div class="carousel-slide">
         <img src="images/slide1.jpg" alt="Image 1">
     </div>
@@ -47,11 +47,14 @@ $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
     </div>
     <div class="carousel-slide">
         <img src="images/slide3.jpg" alt="Image 3">
-    </div>
+    </div> -->
 
     <!-- Navigation buttons -->
-    <a class="carousel-btn" onclick="changeSlide(-1)">&#10094;</a>
+    <!-- <a class="carousel-btn" onclick="changeSlide(-1)">&#10094;</a>
     <a class="carousel-btn" onclick="changeSlide(1)">&#10095;</a>
+</div> -->
+<div class="banner">
+    
 </div>
 <?php
 // Create a new database instance
@@ -73,14 +76,17 @@ if (!$content) {
     echo '<div class="card-container">';
     while ($item = $content->fetch(PDO::FETCH_ASSOC)) {
         echo '<div class="card">
-        
+            <a href="admin.php" class="links">
             <div class="imagecap">
                 <img src="' . $item['path_image'] . '" alt="' . $item['title'] . '">
             </div>
+            
+
             <div class="info">
                 <h2 class="title">' . $item['title'] . '</h2>
                 <p class="text">' . $item['text'] . '</p>
             </div>
+            </a>
         </div>';
     }
     echo '</div>';

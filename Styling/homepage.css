@@ -81,3 +81,20 @@
         display: none;
     }
 }
+
+.links{
+    
+    color: #000; /* Replace #000 with your desired color code */
+    text-decoration: none; /* Removes the underline from the link */
+    
+    
+}
+
+.banner{
+    width: auto;
+    height: 200px;
+    background-color: rgb(27, 59, 111);
+    margin-bottom: 20px ;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
