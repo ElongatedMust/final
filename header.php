@@ -11,7 +11,7 @@ require_once('template.php');
             <li><a href="motorcycles.php">Motorcycles</a></li>
             <li><a href="register.php">Register</a></li>
             <li> <?php if ($isAdmin) { echo '<a href="adminpage.php">admin only</a>';} ?> </li>
-            <li>L4</li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         
     </nav>

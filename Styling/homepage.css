@@ -1,3 +1,4 @@
+/* CSS for desktop mode */
 .content {
     display: flex;
     justify-content: center;
@@ -8,6 +9,8 @@
 .card-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center cards horizontally */
+    align-items: center; /* Center cards vertically */
     gap: 20px;
 }
 
@@ -51,5 +54,30 @@
     color: #666;
 }
 
+/* CSS for banner carousel (desktop mode) */
+.carousel-container {
+    display: flex;
+    width: 100%;
+    height: 300px; /* Set the desired height for the banner */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
 
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%; /* Ensure all images have the same height */
+}
 
+.carousel-btn {
+    cursor: pointer;
+}
+
+/* Media Query for mobile mode (disabling the carousel) */
+@media (max-width: 768px) {
+    .carousel-container {
+        display: none;
+    }
+}
