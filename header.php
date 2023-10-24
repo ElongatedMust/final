@@ -9,9 +9,11 @@ require_once('template.php');
         </div>
         <ul>
             <li><a href="motorcycles.php">Motorcycles</a></li>
-            <li><a href="register.php">Register</a></li>
+            <!-- <li><a href="register.php">Register</a></li> -->
             <li> <?php if ($isAdmin) { echo '<a href="adminpage.php">admin only</a>';} ?> </li>
-            <li><?php if ($isLoggedIn){echo '<a href="logout.php">Logout</a>';}?></li>
+            <li><?php if ($isLoggedIn){echo '<a href="logout.php">Logout</a>';}
+                else {echo'<a href="login.php">Login</a>';}
+            ?></li>
         </ul>
         
     </nav>

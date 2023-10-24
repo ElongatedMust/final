@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['is_admin'] = $user['is_admin'];
 
         if ($_SESSION['is_admin'] == 1) {
-            header('Location: motorcycles.php');
+            header('Location: adminpage.php');
         } else {
             header('Location: homepage.php');
         }

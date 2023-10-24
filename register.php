@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once("template.php");
 require_once('header.php');
 require ('connections/db.register.php');

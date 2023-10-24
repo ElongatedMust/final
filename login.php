@@ -21,6 +21,7 @@ require('header.php');
             </div>
             <br>
             <button type="submit" name="submit" class="click">Connexion</button>
+            <a href="register.php" class="accountcreation">no account ? click here </a>
         </form>  
     </div>
 </body>
