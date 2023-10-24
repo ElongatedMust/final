@@ -56,7 +56,8 @@ $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
 <div class="banner">
     
 </div>
-<?php
+<div class="article">
+  <?php
 // Create a new database instance
 $db = new Database;
 $pdo = $db->getPDO();
@@ -91,7 +92,9 @@ if (!$content) {
     }
     echo '</div>';
 }
-?>
+?>  
+</div>
+
 
 </div>
 </body>

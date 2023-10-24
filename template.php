@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="Styling/homepage.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-    <?php $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;?>
+    <?php $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
+    $isLoggedIn = isset($_SESSION['user_id']);?>
+    
 </head>
 <body>
 
