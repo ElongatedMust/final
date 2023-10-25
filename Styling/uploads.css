@@ -1,0 +1,43 @@
+/* Center the form on the page */
+.uploaded {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+/* Style the form labels */
+.uploaded label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style the text and file inputs */
+.uploaded input[type="text"],
+.uploaded textarea,
+.uploaded input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+.uploaded input[type="submit"] {
+    background-color: #0074a2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.uploaded input[type="submit"]:hover {
+    background-color: #005b8b;
+}

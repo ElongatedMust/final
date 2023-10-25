@@ -10,7 +10,8 @@ require_once('template.php');
         <ul>
             <li><a href="motorcycles.php">Motorcycles</a></li>
             <!-- <li><a href="register.php">Register</a></li> -->
-            <li> <?php if ($isAdmin) { echo '<a href="adminpage.php">admin only</a>';} ?> </li>
+            <li> <?php if ($isAdmin) { echo '<a href="adminpage.php">dashboard</a>';} ?> </li>
+            <li> <?php if ($isAdmin) { echo '<a href="uploads.php">upload</a>';} ?> </li>
             <li><?php if ($isLoggedIn){echo '<a href="logout.php">Logout</a>';}
                 else {echo'<a href="login.php">Login</a>';}
             ?></li>
