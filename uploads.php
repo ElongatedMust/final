@@ -8,7 +8,7 @@ $pageTitle = "post image";
 ?>
 
 
-    <form  method="post" enctype="multipart/form-data" class="uploaded">
+    <form  method="post" enctype="multipart/form-data" class="upload">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" required><br>
         

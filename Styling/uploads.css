@@ -1,43 +1,53 @@
-/* Center the form on the page */
-.uploaded {
+/* Add this CSS to your "uploads.php" */
+.upload {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     background-color: #f5f5f5;
-    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Style the form labels */
-.uploaded label {
+.upload label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-/* Style the text and file inputs */
-.uploaded input[type="text"],
-.uploaded textarea,
-.uploaded input[type="file"] {
+.upload input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
-/* Style the submit button */
-.uploaded input[type="submit"] {
-    background-color: #0074a2;
+.upload textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload input[type="submit"] {
+    background-color: #007BFF;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.uploaded input[type="submit"]:hover {
-    background-color: #005b8b;
+.upload input[type="submit"]:hover {
+    background-color: #0056b3;
 }
