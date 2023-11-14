@@ -15,6 +15,8 @@ require_once('template.php');
             <li><?php if ($isLoggedIn){echo '<a href="logout.php">Logout</a>';}
                 else {echo'<a href="login.php">Login</a>';}
             ?></li>
+            <li><a href="">promotion</a></li>
+            <li><a href="">feedback</a></li>
            
         </ul>
         

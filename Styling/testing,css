@@ -1,0 +1,36 @@
+/* Style for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Container for each content item */
+.image-container {
+    text-align: center;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the images */
+.image {
+    max-width: 400px; /* Images won't exceed their original size */
+    height: 400; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing */
+    margin: 0 auto; /* Center images */
+}
+
+/* Styling for the content details */
+.info {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .image-container {
+        margin: 10px;
+    }
+}
