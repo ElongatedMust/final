@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styling/testing,css">
+    <link rel="stylesheet" href="Styling/testing.css">
 </head>
 <body>
     
@@ -36,10 +36,12 @@ if (isset($_GET['id'])) {
             echo '</div>';
 
             echo '<div class="info">';
-            echo 'Content ID: ' . $row['content_id'];
-            echo 'Title: ' . $row['title'];
-            echo 'Description: ' . $row['text'];
-            // You can add more fields as needed.
+            echo 'Content ID: ' . $row['content_id'] . '</br>';
+            echo 'Title: ' . $row['title'] . '</br>';
+            echo '<div class="description">';
+                echo 'Description: ' . $row['text'];
+            echo '</div>';
+
             echo '</div>';
         }
     }

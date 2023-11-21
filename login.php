@@ -1,4 +1,5 @@
 <?php
+$pageTitle = "Login";
 require_once('template.php');
 require('connections/db.login.php');
 require('header.php');

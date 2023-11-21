@@ -3,22 +3,29 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish a database connection
     $conn = new mysqli("localhost", "root", "", "finals");
+    mysqli_set_charset($conn, 'utf8mb4'); // Set character set
 
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Get the data from the form
-    $title = $_POST["title"];
-    $text = $_POST["text"];
+    // Sanitize and validate inputs
+    $title = filter_var($_POST["title"], FILTER_SANITIZE_STRING);
+    $text = filter_var($_POST["text"], FILTER_SANITIZE_STRING);
 
-    // Upload the image file
+    // Validate and process the uploaded file
     $image = $_FILES["image"];
-    $imagePath = "images/" . $image["name"];
-    move_uploaded_file($image["tmp_name"], $imagePath);
+    if ($image['error'] === UPLOAD_ERR_OK) {
+        $imagePath = "images/" . basename($image["name"]); // Sanitize filename
+        // Additional checks for file type, size, etc. should be here
+        move_uploaded_file($image["tmp_name"], $imagePath);
+    } else {
+        // Handle file upload errors
+        die("Error in file upload");
+    }
 
-    // Insert data into the "contentbox" table
+    // Insert data into the "contentbox" table using prepared statement
     $contentInsertQuery = "INSERT INTO contentbox (title, text) VALUES (?, ?)";
     $stmt = $conn->prepare($contentInsertQuery);
     $stmt->bind_param("ss", $title, $text);
@@ -33,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageInserted = $stmt->execute();
 
         if ($imageInserted) {
-            echo "Data inserted successfully.";
             header("Location: adminpage.php"); // Redirect to a thank-you page
             exit; // Stop the script
         } else {

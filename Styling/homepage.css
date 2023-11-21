@@ -52,6 +52,13 @@
 .text {
     font-size: 1rem;
     color: #666;
+
+        height: 50px; /* Adjust this value based on your preference */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    
+    
 }
 
 /* CSS for banner carousel (desktop mode) */
@@ -98,6 +105,8 @@
     margin-top: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
+
+
 
 .article { 
     background-color: rgb(46, 47, 46);

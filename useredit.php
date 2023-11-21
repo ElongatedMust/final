@@ -1,42 +1,32 @@
 <?php
-require('connections/db.connect.php');
+// Check if ID is provided
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = $_GET['id'];
+    // Database connection
+    require("connections/db.connect.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+    // Fetch the existing data
+    $stmt = $conn->prepare("SELECT title, text FROM contentbox WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
 
-    // Sanitize the form inputs
-    $email = sanitizeInput($_POST['email']);
-    $username = sanitizeInput($_POST['username']);
-    $password = sanitizeInput($_POST['password']);
-    
-    $listingId = $_POST['listing_id']; 
-
-    // Update the contact form data in the database
-    $sql = "UPDATE car_listing SET email = :email, username = :username, password = :password WHERE id = :listingId"; // Remove the comma after :km
-    $statement = $pdo->prepare($sql);
-    $statement->bindParam(':email', $email, PDO::PARAM_STR);
-    $statement->bindParam(':username', $username, PDO::PARAM_STR);
-    $statement->bindParam(':password', $password, PDO::PARAM_INT);
-
-
-    try {
-        if ($statement->execute()) {
-            
-            echo 'Data updated successfully!';
-            header('Location: adminpage.php');
-            exit;
-        } else {
-            
-            echo 'Error updating data.';
-        }
-    } catch (PDOException $e) {
-        // Error handling for database errors
-        echo 'Error: ' . $e->getMessage();
+    if ($data) {
+        $title = $data['title'];
+        $text = $data['text'];
+        // ... (continue with form HTML and prefill the form fields)
+    } else {
+        echo "No record found.";
     }
-}
-
-// Function to sanitize user input
-function sanitizeInput($input) {
-    return htmlspecialchars(trim($input));
+} else {
+    echo "No ID provided.";
 }
 ?>
+<!-- HTML form for editing -->
+<form action="update_info_card.php" method="post">
+    <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <input type="text" name="title" value="<?php echo htmlspecialchars($title); ?>">
+    <textarea name="text"><?php echo htmlspecialchars($text); ?></textarea>
+    <input type="submit" value="Update">
+</form>
